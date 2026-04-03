@@ -1,4 +1,4 @@
-# Waste Audit & Monitoring
+# Campus Waste Audit
 
 ## Overview
 A web-based R Shiny application for collecting, managing, and visualizing solid waste data across multiple locations. This tool supports efficient waste audits by enabling structured data entry, real-time analytics, and centralized reporting.
