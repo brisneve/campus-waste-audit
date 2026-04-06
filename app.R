@@ -422,10 +422,24 @@ ui <- page_fluid(
       .metric-label { font-size: 0.95rem; font-weight: 600; }
       .metric-value { font-size: 1.6rem; font-weight: 700; }
       .plot-wrap { background: white; border-radius: 12px; padding: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); margin-bottom: 16px; }
-      .access-box { width: 60%; margin: 10px auto 20px auto; text-align: left; }
-      .login-fields-wrap { width: 60%; margin-left: auto; margin-right: auto; }
+
+      /* Revised login layout: occupies 25% to 75% of page */
+      .access-box {
+        width: 75%;
+        margin: 10px auto 20px auto;
+        text-align: left;
+      }
+      .login-fields-wrap {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
       .access-box .sheet-title,
-      .access-box .sheet-subtitle { text-align: left; margin-left: 20%; }
+      .access-box .sheet-subtitle {
+        text-align: left;
+        margin-left: 0;
+      }
+
       .wizard-step-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; text-align: left; }
       .admin-sheet-wrap { overflow-x: auto; width: 100%; }
       .step-wrap { width: 40%; min-width: 320px; max-width: 560px; margin-left: auto; margin-right: auto; }
@@ -435,8 +449,8 @@ ui <- page_fluid(
       .step-wrap .form-control,
       .step-wrap .selectize-control { width: 100%; }
       .step-wrap .wizard-step-title { text-align: left; }
-      .login-btn-wrap, .next-btn-wrap { display:flex; justify-content:center; margin-top:18px; }
-
+      .login-btn-wrap { display: flex;  justify-content: flex-start;  margin-top: 18px;}
+    .next-btn-wrap { display: flex; justify-content: center; margin-top: 18px; }
       .loading-target.recalculating {
         opacity: 0.55;
         position: relative;
@@ -536,7 +550,7 @@ ui <- page_fluid(
       ),
       
       tabPanel(
-        "Staff Access",
+        "Staff",
         conditionalPanel(
           condition = "output.staff_logged_in === false",
           div(
@@ -561,7 +575,7 @@ ui <- page_fluid(
       ),
       
       tabPanel(
-        "Admin Access",
+        "Admin",
         conditionalPanel(
           condition = "output.admin_logged_in === false",
           div(
